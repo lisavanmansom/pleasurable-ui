@@ -1,0 +1,105 @@
+<%- include('./partials/head') %>
+<%- include('./partials/navigation', {current: '/lessons'}); %>
+<main class="lessons">
+    <header>
+        <h1>Lessons</h1>
+        <ol>
+            <li>Listening 
+                <%- include('./partials/svg-listening') %></li>    
+            
+            <li>Your first words</li>
+        </ol>
+    </header>
+
+    <section class="own-playlist">
+        <h2>Own playlist</h2>
+        <div>
+            <article>
+                <%- include('./partials/svg-plus') %>
+                <h5>Make a playlist!</h5>
+                <p>Add your favourite stories in one playlist</p>
+            </article>
+
+            <%- include('./partials/playlist') %>
+        </div>
+            
+    </section>
+
+    <section class="all-stories">
+        <div class="header-allstories">
+            <div class="header-title"><h3>All stories</h3>
+            <a href="/allstories"><p>Show all stories</p></a></div>
+
+            <form action="/" method="get">
+
+                <% language.forEach(language => { %>
+                <button title="language" type="button">
+                  <img src="https://fdnd-agency.directus.app/assets/<%= language.flag %>" width="25" height="10"
+                  onerror="this.onerror=null;this.src='Placeholder-2.png';" alt="language flag">
+                  <%- language.language %>
+                </button>
+                <% }) %>
+
+            </form>
+        </div>
+
+        <div class="gallery">
+
+            <%- include('./partials/stories') %>
+
+        </div>
+
+        <div class="tab-buttons" >
+            <button class="prevBTN" title="previous" hidden><</button>
+            <button class="nextBTN" title="next" hidden>></button>
+        </div>
+
+    </section>
+
+<div class="playlist-overview">
+    <section class="liked-playlist">
+
+        <h4 class="hidden-header">Liked playlist</h4>
+
+        <div class="slayrousel">
+            <div class="liked-circle" hidden>
+                <svg viewBox="0 0 100 100">
+                <path d="M 0,50 a 50,50 0 1, 1 0, 1 z" id="circle"></path>
+                
+                <text><textPath xlink:href="#circle">
+                    liked playlist
+                </textPath></text>
+
+            </svg></div>
+
+            <div class="art-slayrousel">
+                <%- include('./partials/playlist-liked') %>
+            </div>
+        </div>
+    </section>
+
+    <section class="sug-playlist">
+
+        <h4 class="hidden-header">Suggested playlists</h4>
+
+        <div class="slayrousel">
+            <div hidden class="sug-circle">
+                <svg viewBox="0 0 100 100">
+                <path d="M 0,50 a 50,50 0 1, 1 0, 1 z" id="circle"></path>
+                
+                <text><textPath xlink:href="#circle">
+                    suggested playlist
+                </textPath></text>
+
+            </svg></div>
+            <div class="art-slayrousel">
+                <%- include('./partials/playlist-suggested') %>
+
+            </div>     
+        </div>
+    
+    </section>
+  </div>
+</main>
+
+<%- include('./partials/foot') %>

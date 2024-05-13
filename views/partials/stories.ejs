@@ -1,0 +1,52 @@
+<% if (stories && stories.length > 0) { %>
+      <% stories.forEach(story => { %>
+
+        <article><a>
+          <% if (story.image) { %>
+
+            <picture>
+              <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image.id %>?format=avif" type="image/avif"> 
+              <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image.id %>?format=webp" type="image/webp"> 
+              
+              <img class="story-img"src="https://fdnd-agency.directus.app/assets/<%= story.image.id %>" width="<%= story.image.width %>" height="<%= story.image.height %>" loading="lazy" alt="story">
+              
+            </picture>
+
+              <% } else{ %> 
+
+                <img class="playlist-img" src="./Placeholder-1.png" width="448" height="380" alt="playlist"> 
+                <% } %>
+
+                    <div class="story-info">
+
+                    <picture>
+                      <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>?format=avif" type="image/avif">
+                      <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>?format=webp" type="image/webp">
+                        
+                      <img src="https://fdnd-agency.directus.app/assets/<%= language.flag %>" width="25" height="10"
+                        onerror="this.onerror=null;this.src='Placeholder-2.png';" alt="language flag">
+                    
+                    </picture>
+
+                      <h5><%= story.title %></h5>
+                    
+                      <p><%= story.summary %></p>
+      
+                      <%- include('./svg-play') %> 
+      
+                      <p>3 min. 5sec</p>
+
+                </a>
+      
+                <button title="download story">
+                    <%- include('./svg-download') %></button>
+      
+                <button title="add to playlist">
+                    <%- include('./svg-add') %></button></div>
+
+                
+        </article><% }) %>
+
+  <% } else { %>
+    <p>No stories available.</p>
+  <% } %>
