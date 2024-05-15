@@ -73,6 +73,7 @@ app.get('/allstories', function (request, response) {
 
 app.post('/:playlistId/like-or-unlike', function (request, response) {
   const playlistId = Number(request.params.playlistId)
+  const actie = request.body.actie; 
   console.log(request.body.action, playlistId)
 
   // Implement the logic to handle liking or unliking the playlist
@@ -98,7 +99,14 @@ app.post('/:playlistId/like-or-unlike', function (request, response) {
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
-    }).then((deleteResponse) => {
+    }).then((playlistData) => {
+      response.render('partials/playlist-liked', {
+        playlist: playlistData.data,
+        likes: likes
+      })
+    }); 
+  } else {
+    ((deleteResponse) => {
       console.log(deleteResponse)
       response.redirect(303, '/lessons/')
     })
