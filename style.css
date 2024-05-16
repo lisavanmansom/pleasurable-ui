@@ -1,14 +1,14 @@
-@font-face {
-  font-family: "Poppins";
-  src: url(/Poppins-Regular.ttf);
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url(/Poppins-SemiBold.ttf);
-  font-weight: 200;
-}
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
 
 :root {
 --primary-font: "Poppins", sans-serif;
@@ -16,4 +16,27 @@
   /*--------b---w------ */
   --white: #F5FAFF;
   --black: hsla( 0, 0%, 0%,1);
+}
+
+/* generiek */
+body{
+    background: rgb(255,255,255);
+    background: linear-gradient(4deg, rgba(255,255,255,1) 2%, rgba(34,74,136,1) 87%);
+
+    & p{
+        color: white;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+    }
+}
+
+header{
+    font-family: "Poppins", sans-serif;
+
+    & h1{
+        color: white;
+        font-size: 48px;
+        margin: 0;
+        text-align: center;
+    }
 }
