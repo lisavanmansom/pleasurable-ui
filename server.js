@@ -69,8 +69,8 @@ app.get('/allstories', function (request, response) {
   })
 })
 
-// Maak een POST route voor de lessons pagina
 
+// Maak een POST route voor de lessons pagina
 app.post('/:playlistId/like-or-unlike', function (request, response) {
   const playlistId = Number(request.params.playlistId)
   console.log(request.body.action, playlistId)
