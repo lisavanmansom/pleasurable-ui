@@ -294,7 +294,7 @@ body {
     width: 100%;
 
     > h1 {
-      margin: 1.5em 0 .75em 0;
+      margin: 2.5em 0 .75em 0;
       display: block;
       text-transform:uppercase;
     }
@@ -304,7 +304,7 @@ body {
       flex-wrap: nowrap;
       gap: 1.5rem;
       justify-content: flex-start;
-      margin: .5em 0 0 1.2em;
+      margin: 2.5em 0 0.5em 1.2em;
       overflow: scroll;
       width: 100%;
 
@@ -369,6 +369,7 @@ body {
       margin: 1em 0 1em 1.8em;
       overflow-x: scroll;
       width: 100%;
+      max-width: 56em;
 
       scroll-snap-type: x mandatory;
 
@@ -377,7 +378,8 @@ body {
         border-radius: var(--radius-2);
         height: 13em;
         width: 8em;
-
+        
+        position: relative;
         scroll-snap-align: center;
   
         > a {
@@ -386,9 +388,11 @@ body {
           flex-direction: column;
           justify-content: center;
   
-          img {
-            border-radius: var(--radius-2);
-            margin: 1em 0 .75em 0;
+          .playlist-img {
+            object-fit: cover;
+            position: absolute;
+            width: 100%; height: 100%;
+            top: 0; bottom: 0; left: 0; right: 0;
           }
   
           h5 {
