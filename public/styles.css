@@ -358,7 +358,7 @@ body {
       max-width: 60rem
     }
 
-    > div {
+    > div:nth-of-type(2) {
       align-items: start;
       display: flex;
       flex-wrap: wrap;
