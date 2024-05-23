@@ -368,18 +368,21 @@ body {
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 9em;
+        width: 20em;
 
         > h2 {
           color: transparent;
           font-size: 3.5em;
           line-height: 1em;
-          margin: 0 0em 0em -0.0em;
-          padding: .25em 0 0 0;
+          padding: .25em 0 0 .15em;
           text-transform: uppercase;
           max-width: 10em;
           -webkit-text-stroke-width: 2px;
           -webkit-text-stroke-color: var(--method-1-l);
+        }
+
+        > a {
+          margin: 9.5em 0 0 .75em 
         }
       }
     
@@ -397,7 +400,7 @@ body {
         scroll-snap-type: x mandatory;
 
         > article {
-          background-color: var(--white);
+          background-color: var(--black);
           height: inherit;
           width: 15em;
         
@@ -408,34 +411,47 @@ body {
             align-items: center;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-  
+            height: 100%;
+
             .playlist-img {
               object-fit: cover;
+
               position: absolute;
               width: 100%; height: 100%;
               top: 0; bottom: 0; left: 0; right: 0;
             }
-  
-            h5 {
-              text-align:left ;
-              width: 108px;
-              height: 49px;
-              color: var(--black);
+
+            .playlist-info {
+              background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgb(0, 0, 0));
+              display: flex; flex-direction: column;
+              align-items: center; justify-content: end;
+              height: inherit;
+              padding: 0 0 1em 0;
+              width: 100%;
               z-index: 10;
-            }
-  
-            > div {
-              display: flex;
-              flex-direction: row;
-              gap: .55em;
-              margin: .25em 0 0 0;
-              z-index: 10;
+              background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgb(0, 0, 0));
+
+              h5 {
+                text-align:left ;
+                width: 108px;
+                height: 49px;
+                color: var(--white);
+                z-index: 10;
+              }
+    
+              > div {
+                display: flex;
+                flex-direction: row;
+                gap: .55em;
+                margin: .25em 0 0 0;
+                z-index: 10;
+              }
+
             }
           }
   
           > a, p {
-            color: var(--black);
+            color: var(--white);
             font-weight: 200;
             text-align: center;
           }
