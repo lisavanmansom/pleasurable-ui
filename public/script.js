@@ -7,7 +7,10 @@ var sugCircle = document.querySelector('.sug-circle')
 var hiddenHeader = document.querySelectorAll('.hidden-header')
 var prevBTN = document.querySelector('.prevBTN')
 var nextBTN = document.querySelector('.nextBTN')
+var prevBTN2 = document.querySelector('.prevBTN2')
+var nextBTN2 = document.querySelector('.nextBTN2')
 const carousel = document.querySelector('.playlist-carousel')
+const gallery = document.querySelector('.gallery')
 
 // hamburger menu addeventlistener
 hamburger.addEventListener('click', () => {
@@ -25,6 +28,8 @@ likedCircle.hidden = false
 sugCircle.hidden = false
 nextBTN.hidden = false
 prevBTN.hidden = false
+nextBTN2.hidden = false
+prevBTN2.hidden = false
 
 // Carousel own playlist
 // Buttons click scrollevent in carousel
@@ -42,7 +47,24 @@ nextBTN.addEventListener('click', function () {
   })
 });
 
-console.log("test")
+// Carousel all stories
+// Buttons click scrollevent in carousel
+prevBTN2.addEventListener('click', function () {
+  gallery.scrollBy({
+    left: -gallery.offsetWidth,
+    behavior: 'smooth'
+  })
+  gallery.classList.add('item-open');
+});
+
+nextBTN2.addEventListener('click', function () {
+  gallery.scrollBy({
+    left: gallery.offsetWidth,
+    behavior: 'smooth'
+  })
+  gallery.classList.add('item-open');
+});
+
 
 // Carousel liked + suggested playlist
 // external JS file GSAP
