@@ -113,6 +113,8 @@ body {
     background-color: var(--bg-method);
     display: flex;
     height: 100%;
+    width: 100%;
+    overflow-y: hidden;
     position: sticky;
     z-index: 9;
     border-bottom: 2px solid white;
@@ -347,88 +349,109 @@ body {
   /* playlist section */
   > section:nth-of-type(1) {
       align-items: center;
+      border-top: 3px solid white;
       display: flex;
       flex-direction: column;
       margin: 2.5em 0 0 0;
       overflow-y: hidden;
       width: 100%;
 
-    h2 {
-      width: 11em;
-      max-width: 60rem
-    }
-
-    > div:nth-of-type(2) {
+    > div:nth-of-type(1) {
       align-items: start;
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      gap: 1.5em;
-      height: 15em;
-      justify-content: flex-start;
-      margin: 1em 0 1em 1.8em;
-      overflow-x: scroll;
+      flex-direction: row;
       width: 100%;
-      max-width: 56em;
+      height: 20em;
 
-      scroll-snap-type: x mandatory;
+      > .header-own-playlist {
+        background-color: var(--black);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 9em;
 
-      > article {
-        background-color: var(--white);
-        border-radius: var(--radius-2);
-        height: 13em;
-        width: 8em;
+        > h2 {
+          color: transparent;
+          font-size: 3.5em;
+          line-height: 1em;
+          margin: 0 0em 0em -0.0em;
+          padding: .25em 0 0 0;
+          text-transform: uppercase;
+          max-width: 10em;
+          -webkit-text-stroke-width: 2px;
+          -webkit-text-stroke-color: var(--method-1-l);
+        }
+      }
+    
+      > .playlist-carousel {
+        align-items: start;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-start;
+        overflow-x: scroll;
+        width: 100%;
+        max-width: 56em;
+
+        scroll-snap-type: x mandatory;
+
+        > article {
+          background-color: var(--white);
+          height: inherit;
+          width: 15em;
         
-        position: relative;
-        scroll-snap-align: center;
+          position: relative;
+          scroll-snap-align: center;
   
-        > a {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-  
-          .playlist-img {
-            object-fit: cover;
-            position: absolute;
-            width: 100%; height: 100%;
-            top: 0; bottom: 0; left: 0; right: 0;
-          }
-  
-          h5 {
-            text-align:left ;
-            width: 108px;
-            height: 49px;
-            color: var(--black);
-          }
-  
-         > div {
+          > a {
+            align-items: center;
             display: flex;
-            flex-direction: row;
-            gap: .55em;
+            flex-direction: column;
+            justify-content: center;
+  
+            .playlist-img {
+              object-fit: cover;
+              position: absolute;
+              width: 100%; height: 100%;
+              top: 0; bottom: 0; left: 0; right: 0;
+            }
+  
+            h5 {
+              text-align:left ;
+              width: 108px;
+              height: 49px;
+              color: var(--black);
+              z-index: 10;
+            }
+  
+            > div {
+              display: flex;
+              flex-direction: row;
+              gap: .55em;
+              margin: .25em 0 0 0;
+              z-index: 10;
+            }
+          }
+  
+          > a, p {
+            color: var(--black);
+            font-weight: 200;
+            text-align: center;
+          }
+  
+          > p {
             margin: .25em 0 0 0;
+            font-weight: 100;
+            font-size: 11px;
           }
         }
   
-        > a, p {
-          color: var(--black);
-          font-weight: 200;
-          text-align: center;
+        article:hover {
+          border: 1px solid var(--method-1-l);
+          transition: .3s linear;
         }
-  
-        > p {
-          margin: .25em 0 0 0;
-          font-weight: 100;
-          font-size: 11px;
-          
-        }
-      }
-  
-      article:hover {
-        border: 1px solid var(--method-1-l);
-        transition: .3s linear;
-      }
-  
+
       /* add playlist styling-article */
       > article:nth-of-type(1) {
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.418), rgba(124, 90, 196, 0.304));
@@ -443,6 +466,7 @@ body {
         gap: .65em;
         justify-content: center;
         text-align: center;
+        width: 8em;
   
         > svg {
           margin: .5em 0 0 0;
@@ -461,7 +485,15 @@ body {
           font-size: 11px;
         }
       }
-    } 
+    }
+  } 
+  > .progress {
+    width: 100%;
+    width: 0;
+    height: .25em;
+    background-color: var(--method-1-l);
+    transition: all 0.2s linear;
+  }
   } /* section-1 end-tag */
 
     /* stories section */
@@ -479,8 +511,8 @@ body {
       height: auto;
       width: 100%;
       gap: .5em;
+      overflow-y: hidden;
       justify-content: center;
-      margin: 2em 0 0 0;
 
       .header-allstories {
         align-items: center;
@@ -638,6 +670,7 @@ body {
 
  > section:nth-of-type(4) {
   margin: 0em;
+  overflow-y: hidden;
  }
 }
 
@@ -655,6 +688,7 @@ body {
     background-repeat: repeat;
     height: auto;
     width: 100%;
+    overflow-y: hidden;
 
     .liked-playlist {
       align-items: start;
@@ -669,6 +703,7 @@ body {
       .slayrousel {
         margin: 1em 0em 0 -21em;
         z-index: 100;
+        width: 100%;
   
         .art-slayrousel {
           aspect-ratio: 1;
@@ -796,8 +831,11 @@ body {
       }
   
       .slayrousel {
-        margin: 1em -21em 0 0;
+        margin: 1em -4em 0 0;
         position: relative;
+        width: 100%;
+        overflow-y: hidden;
+
   
         .art-slayrousel {
           overflow: hidden;

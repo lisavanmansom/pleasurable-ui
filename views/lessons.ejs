@@ -12,25 +12,24 @@
     </header>
 
     <section class="own-playlist">
-        <div>
-            <h2>Own playlist</h2>
-            <a href="/allstories"><p>Show all playlist</p></a>
-        </div>
+        <div><div class="header-own-playlist">
+            <h2>Own <br> play <br> list</h2>
+            <a href="/allstories"><p>Show all playlist</p></a></div>
+        
+            <div class="playlist-carousel">
+                <article>
+                    <%- include('./partials/svg-plus') %>
 
-        <div>
-            <article>
-                <%- include('./partials/svg-plus') %>
+                    <h5>Make a playlist!</h5>
+                    <p>Add your favourite stories in one playlist</p>
 
-                <h5>Make a playlist!</h5>
-                <p>Add your favourite stories in one playlist</p>
+                </article>
 
-            </article>
+                <%- include('./partials/playlist') %>
 
-            <%- include('./partials/playlist') %>
-
-        </div>
+            </div></div>
             
-        <p>progress placeholder</p>
+        <div class="progress"></div>
             
     </section>
 
