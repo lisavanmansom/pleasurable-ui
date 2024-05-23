@@ -7,6 +7,7 @@ var sugCircle = document.querySelector('.sug-circle')
 var hiddenHeader = document.querySelectorAll('.hidden-header')
 var prevBTN = document.querySelector('.prevBTN')
 var nextBTN = document.querySelector('.nextBTN')
+const carousel = document.querySelector('.playlist-carousel')
 
 // hamburger menu addeventlistener
 hamburger.addEventListener('click', () => {
@@ -24,6 +25,24 @@ likedCircle.hidden = false
 sugCircle.hidden = false
 nextBTN.hidden = false
 prevBTN.hidden = false
+
+// Carousel own playlist
+// Buttons click scrollevent in carousel
+prevBTN.addEventListener('click', function () {
+  carousel.scrollBy({
+    left: -carousel.offsetWidth,
+    behavior: 'smooth'
+  })
+});
+
+nextBTN.addEventListener('click', function () {
+  carousel.scrollBy({
+    left: carousel.offsetWidth,
+    behavior: 'smooth'
+  })
+});
+
+console.log("test")
 
 // Carousel liked + suggested playlist
 // external JS file GSAP
