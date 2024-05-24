@@ -13,12 +13,14 @@
         <% }  else { %> 
             <img class="playlist-img" src="./Placeholder-1.png" width="448" height="380" alt="playlist"> 
         <% } %>
+        
+            <div class="playlist-info">
+                <h5><%= playlist.title %></h5>
 
-            <h5><%= playlist.title %></h5>
+                <div><%- include('./svg-play') %>
 
-            <div><%- include('./svg-play') %>
-
-            <p>31 min. 55sec</p></div>
+                <p>31 min. 55sec</p></div>
+            </div>
 
         </a>
     </article>  
