@@ -16,14 +16,16 @@
         <div>
             <article>
                 <div class="add-playlist">
-                    <%- include('./partials/svg-plus') %>
-                    <h5>Make a playlist!</h5>
-                    <p>Add your favourite stories in one playlist</p>
+                    <a href="#playlist">
+                        <%- include('./partials/svg-plus') %>
+                        <h5>Make a playlist!</h5>
+                        <p>Add your favourite stories in one playlist</p>
+                    </a>
                 </div>
             </article>
 
-            <div class="playlist">
-                <a class="close-playlist">X</a>
+            <div id="playlist" class="playlist">
+                <a href="#" class="close-playlist">X</a>
                 <form method="post">
                     <h1>Choose a name for your playlist</h1>
                     <div>
@@ -31,7 +33,7 @@
                         <input id="playlistName" type="text" required placeholder="Name playlist" name="NewPlaylists">
                     </div>
                     <div class="file-input">
-                        <label for="file">Select image</p>
+                        <label id="button" for="file">Select image</p>
                         </label>
                         <input class="file" id="file" type="file" accept="image/*" onchange="showPreview(event);"  />
                         <button>Create playlist</button>

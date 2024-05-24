@@ -1,7 +1,4 @@
 // elements selecteren
-let add_playlist = document.querySelector('.add-playlist')
-let playlist = document.querySelector('.playlist')
-let close_playlist = document.querySelector('.close-playlist')
 let hamburger = document.querySelector('.hamburger')
 let navMenu = document.querySelector('.desktop')
 let body = document.querySelector('body')
@@ -18,13 +15,7 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active-bar')
 })
 
-add_playlist.addEventListener('click', () => {
-  playlist.classList.toggle('playlist-active')
-})
 
-close_playlist.addEventListener('click', () => {
-  playlist.classList.toggle('playlist-active')
-})
 
 // PE suggested + liked playlist section
 // JS code added & removing styling without JS
