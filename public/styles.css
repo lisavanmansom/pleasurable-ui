@@ -204,10 +204,8 @@ body {
 
 /* Javascript classes aanpassingen */
 .nav-active {
-  position: absolute; top: 47px; right: 0; left: 0;
-
   transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.3s ease-in;
 
   background-color: var(--bg-method);
   width: 100%;
@@ -727,7 +725,6 @@ body {
     background-repeat: repeat;
     height: auto;
     width: 100%;
-    overflow-y: hidden;
 
     .liked-playlist {
       align-items: start;
@@ -742,7 +739,6 @@ body {
       .slayrousel {
         margin: 1em 0em 0 -21em;
         z-index: 100;
-        width: 100%;
   
         .art-slayrousel {
           aspect-ratio: 1;
@@ -856,7 +852,7 @@ body {
       flex-direction: column;
       justify-content: end;
       align-items: end;
-      padding: 8em 0 10em 0;
+      padding: 5em 0 10em 0;
       height: auto;
       overflow: hidden;
       width: 100%;
@@ -870,9 +866,8 @@ body {
       }
   
       .slayrousel {
-        margin: 1em -4em 0 0;
+        margin: 1em -21em 0 0;
         position: relative;
-        width: 100%;
   
         .art-slayrousel {
           overflow: hidden;
@@ -1083,6 +1078,59 @@ body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+/* ----------------------------------------------------------------- */
+/* mediaquery */
+
+@media (min-width:525px) {
+
+  .lessons{
+
+    display: flex;
+    header {display: flex;
+      h1  {  font-size: 44px;  }
+      p   {  font-size: 16px;  }
+      ol { align-items: center; display: flex; width: auto; 
+        li { font-size: 1em ; }}} 
+
+    section:nth-of-type(2) { 
+      .header-allstories { 
+        .header-title {
+          h3 { font-size: 22px; }
+          form { align-items: center; display: flex; width: auto; }
+      }
+    }
+    }
+  }
+}
+
+@media (min-width:870px) { 
+  .has-js {
+    .lessons{
+      .playlist-overview {
+        display: flex;
+        .sug-playlist {
+          padding: 15.5em 0 10em 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:1200px) { 
+  .has-js {
+    .lessons{
+      .playlist-overview {
+        .liked-playlist {
+          padding: 7.5em 0 8em 10em;
+        }
+        .sug-playlist {
+          padding: 7.5em 7em 10em 0;
+        }
+      }
+    }
   }
 }
 
