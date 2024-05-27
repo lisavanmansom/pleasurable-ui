@@ -204,10 +204,8 @@ body {
 
 /* Javascript classes aanpassingen */
 .nav-active {
-  position: absolute; top: 47px; right: 0; left: 0;
-
   transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.3s ease-in;
 
   background-color: var(--bg-method);
   width: 100%;
