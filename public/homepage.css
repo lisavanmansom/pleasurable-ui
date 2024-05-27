@@ -17,7 +17,7 @@
   50% {  transform: skewY(3deg); }
 }
 
-/* KOP WOBBLE ANIMATIE */
+/* KOP WOBBLE ANIMATION */
 
 .kop {
   animation: kop-wobble 3s infinite linear;
