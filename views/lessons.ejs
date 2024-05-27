@@ -12,16 +12,29 @@
     </header>
 
     <section class="own-playlist">
-        <h2>Own playlist</h2>
-        <div>
-            <article>
-                <%- include('./partials/svg-plus') %>
-                <h5>Make a playlist!</h5>
-                <p>Add your favourite stories in one playlist</p>
-            </article>
+        <div><div class="header-own-playlist">
+            <h2>Own <br> play <br> list</h2>
+            <a href="/allstories"><p>Show all playlist</p></a></div>
+        
+            <div class="playlist-carousel">
+                <article>
+                    <%- include('./partials/svg-plus') %>
 
-            <%- include('./partials/playlist') %>
-        </div>
+                    <h5>Make a playlist!</h5>
+                    <p>Add your favourite stories in one playlist</p>
+
+                </article>
+
+                <%- include('./partials/playlist') %>
+
+                <div class="tab-buttons">
+                    <button class="prevBTN" title="previous" hidden> < </button>
+                    <button class="nextBTN" title="next" hidden> > </button>
+                </div>
+
+            </div></div>
+            
+        <div class="progress"></div>
             
     </section>
 
@@ -49,9 +62,9 @@
 
         </div>
 
-        <div class="tab-buttons" >
-            <button class="prevBTN" title="previous" hidden><</button>
-            <button class="nextBTN" title="next" hidden>></button>
+        <div class="tab-buttons">
+            <button class="prevBTN2" title="previous" hidden><</button>
+            <button class="nextBTN2" title="next" hidden>></button>
         </div>
 
     </section>
