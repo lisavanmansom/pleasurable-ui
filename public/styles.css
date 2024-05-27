@@ -725,7 +725,6 @@ body {
     background-repeat: repeat;
     height: auto;
     width: 100%;
-    overflow-y: hidden;
 
     .liked-playlist {
       align-items: start;
@@ -740,7 +739,6 @@ body {
       .slayrousel {
         margin: 1em 0em 0 -21em;
         z-index: 100;
-        width: 100%;
   
         .art-slayrousel {
           aspect-ratio: 1;
@@ -854,7 +852,7 @@ body {
       flex-direction: column;
       justify-content: end;
       align-items: end;
-      padding: 8em 0 10em 0;
+      padding: 5em 0 10em 0;
       height: auto;
       overflow: hidden;
       width: 100%;
@@ -868,9 +866,8 @@ body {
       }
   
       .slayrousel {
-        margin: 1em -4em 0 0;
+        margin: 1em -21em 0 0;
         position: relative;
-        width: 100%;
   
         .art-slayrousel {
           overflow: hidden;
