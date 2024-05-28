@@ -467,6 +467,7 @@ body {
           transition: .3s linear;
         }
 
+
       /* add playlist styling-article */
       > article:nth-of-type(1) {
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.418), rgba(124, 90, 196, 0.304));
@@ -1135,6 +1136,117 @@ body {
 }
 
 /* ----------------------------------------------------------------- */
+
+/* all playlist page */
+
+.back-icon {
+  position: absolute;
+  top: 5.5em;
+  left: 1em;
+}
+
+.allplaylist {
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: var(--white);
+  overflow-y: hidden;
+  width: 100%; 
+  background-image:
+  radial-gradient(at 84% 13%, hsla(259,47%,56%,1) 0px, transparent 50%),
+  radial-gradient(at 21% 74%, hsla(265,76%,27%,1) 0px, transparent 50%);
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+}
+
+.all-playlist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  article {
+    background: linear-gradient(45deg, #1982c4, #8712ab);
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+    border-radius: 183px 78px 200px 136px;
+    height: 21em;
+    width: 15em;
+    margin: 3em;
+  }
+}
+    
+.all-playlist article::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0; 
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #1982c4, #8712ab, #ff009d, #ff6600, #ffcc00, #00cc99);
+  animation: border 4s linear infinite;
+}
+
+@keyframes border {
+  0%,
+  100% {
+    background: linear-gradient(45deg, #1982c4, #8712ab, #ff009d, #ff6600, #ffcc00, #00cc99);
+  }
+  50% {
+    background: linear-gradient(225deg, #1982c4, #8712ab, #ff009d, #ff6600, #ffcc00, #00cc99);
+  }
+}
+
+.background-picture img {
+  filter: blur(5px);
+  height: 20em;
+  width: 15em;
+  border-radius: 183px 78px 200px 136px;
+  opacity: 0.8;
+
+}
+
+.playlist-img {
+  height: 15em;
+  position: absolute;
+  bottom: 0.8em;
+  left: 3em;
+  border-radius: 52px 169px 127px 179px;
+  -webkit-border-radius: 52px 169px 127px 179px;
+  -moz-border-radius: 52px 169px 127px 179px;
+}
+
+.playlist-details {
+  padding: 1em;
+  border-radius: var(--radius-2);
+  transform: skew(-0.06turn);
+  rotate: -20deg;
+  width: max-content;
+  position: absolute;
+  top: 80%;
+  right: -20%;
+  background: linear-gradient(135deg, rgba(120, 117, 117, 0.555), rgba(97, 9, 119, 0.675));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--method-1-d2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
 /* styling allstories-page */
 .allstories {
   align-items: center;
@@ -1142,8 +1254,8 @@ body {
   flex-direction: column;
   overflow-y: hidden;
   width: 100%;
-
   background-color: hsla( 0, 0%, 0%,1);
   color: var(--white);
 }
+
 

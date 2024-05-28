@@ -60,6 +60,16 @@ app.get('/lessons', function (request, response) {
   })
 })
 
+app.get('/allplaylist', function (request, response) {
+  Promise.all([
+    fetchJson('https://fdnd-agency.directus.app/items/tm_playlist?fields=*,image.id,image.height,image.width'),
+    fetchJson('https://fdnd-agency.directus.app/items/tm_language'),
+  ]).then(([playlistData, languageData]) => {
+    response.render('allplaylist', {playlist: playlistData.data,language: languageData.data })
+  })
+})
+
+
 app.get('/allstories', function (request, response) {
   Promise.all([
     fetchJson('https://fdnd-agency.directus.app/items/tm_story?fields=*,image.id,image.height,image.width'),
