@@ -11,6 +11,7 @@ var prevBTN2 = document.querySelector('.prevBTN2')
 var nextBTN2 = document.querySelector('.nextBTN2')
 const carousel = document.querySelector('.playlist-carousel')
 const gallery = document.querySelector('.gallery')
+const delay = 200; // Delay in milliseconds
 
 // hamburger menu addeventlistener
 hamburger.addEventListener('click', () => {
@@ -46,6 +47,43 @@ nextBTN.addEventListener('click', function () {
     behavior: 'smooth'
   })
 });
+
+// hover & click event button
+prevBTN.addEventListener('mousedown', () => {
+  prevBTN.classList.add('button-background');
+});
+
+prevBTN.addEventListener('mouseup', () => {
+    setTimeout(() => {
+      prevBTN.classList.remove('active');
+    }, delay);
+});
+
+prevBTN.addEventListener('mouseleave', () => {
+    // This ensures the class is removed if the mouse leaves the button while it's pressed
+    setTimeout(() => {
+      prevBTN.classList.remove('button-background');
+    }, delay);
+});
+
+// hover & click event button
+nextBTN.addEventListener('mousedown', () => {
+  nextBTN.classList.add('button-background');
+});
+
+nextBTN.addEventListener('mouseup', () => {
+    setTimeout(() => {
+      nextBTN.classList.remove('active');
+    }, delay);
+});
+
+nextBTN.addEventListener('mouseleave', () => {
+    // This ensures the class is removed if the mouse leaves the button while it's pressed
+    setTimeout(() => {
+      nextBTN.classList.remove('button-background');
+    }, delay);
+});
+
 
 // Carousel all stories
 // Buttons click scrollevent in carousel

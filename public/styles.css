@@ -37,6 +37,7 @@
   --method-1-o:rgb(126, 93, 197);
   --method-1-d:rgba(126, 93, 197, 0.593);
   --method-1-d2: rgba(120, 76, 214, 0.43);
+  --method-1-d3: rgba(76, 45, 143, 0.43);
   --method-1-l:rgb(170, 144, 225);
 
   --method-2: rgb(20,33,81);
@@ -368,22 +369,31 @@ body {
         display: flex;
         flex-direction: column;
         height: 110%;
-        width: 20em;
-        z-index: 1;
+        min-width: 11.375em;
+        max-width: 14em;
+        z-index: 100;
 
         > h2 {
-          color: transparent;
+          color: var(--white);
           font-size: 3.5em;
           line-height: 1em;
-          padding: .25em 0 0 .15em;
+          padding: .75em 0 0 .25em;
           text-transform: uppercase;
           max-width: 10em;
-          -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: var(--method-1-l);
+
+          text-shadow:
+          0 0 7px var(--method-1-l),
+          0 0 10px var(--method-1-l),
+          0 0 21px var(--method-1-l),
+          0 0 42px var(--method-1-l),
+          0 0 82px var(--method-1-l),
+          0 0 92px var(--method-1-l),
+          0 0 102px var(--method-1-l),
+          0 0 151px var(--method-1-l);
         }
 
         > a {
-          margin: 12em 0 0 .75em 
+          margin: 9em 0 0 .75em 
         }
       }
     
@@ -396,7 +406,7 @@ body {
         justify-content: flex-start;
         overflow-x: scroll;
         width: 100%;
-        max-width: 56em;
+        max-width: 123.5em;
 
         scroll-snap-type: x mandatory;
 
@@ -507,24 +517,34 @@ body {
     .tab-buttons {
       display: flex; justify-content: center; align-items: end;
       height: 2em;
-      gap: 2em;
       width: 100%;
-      margin: 19.75em 0 0 -4.5em;
+      margin: 19.75em 0 0 -5.5em;
       position: absolute;
 
       button {
         color: var(--white);
         font-size: 18px;
+      } 
+
+      button:hover {
+        width: 5em;
+        height: 1.75em;
+        background-color: var(--method-1-d3);
+        transition: all .5s ease-in-out;
       }
 
       > .prevBTN {
         z-index: 9;
+        transition: all .5s ease-in-out;
+        width: 5em;
       }
       > .nextBTN {
         z-index: 11;
         margin: 0 0 0 3em;
+        width: 5em;
       }
     }
+
   } 
   > .progress {
     width: 100%;
@@ -978,6 +998,17 @@ body {
   }
   }
 } /* endtag main  */
+
+/* Javascript classes aanpassingen */
+.button-background {
+  width: 5em;
+  height: 1.75em;
+  padding: 0;
+  margin: 0;
+  background-color: var(--method-1-d3);
+  transition: all .5s ease-in-out;
+}
+
 
 /* only working without js */
 .liked-no-js {
