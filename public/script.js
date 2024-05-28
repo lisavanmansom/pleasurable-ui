@@ -84,7 +84,6 @@ nextBTN.addEventListener('mouseleave', () => {
     }, delay);
 });
 
-
 // Carousel all stories
 // Buttons click scrollevent in carousel
 prevBTN2.addEventListener('click', function () {
