@@ -1215,7 +1215,8 @@ header {
 }
 
 .all-playlist-img {
-  height: 15em;
+  height: 17em;
+  width: 10em;
   position: absolute;
   bottom: 0.8em;
   left: 3em;
