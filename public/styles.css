@@ -53,6 +53,16 @@
   --radius-3: 4px;
 }
 
+     /* DAYTIME BACKGROUND HOMEPAGE */
+     :root[data-theme='daytime'] {
+      --background-color: linear-gradient(22deg, rgba(131,197,190,1) 0%, rgba(0,109,119,1) 100%);
+    }
+    
+    /* NIGHTTIME BACKGROUND HOMEPAGE */
+    :root[data-theme='nighttime'] {
+      --background-color: pink;
+    }
+
 @supports ( background: linear-gradient(in oklch, red 0 0) ) {
   :root {
     --gr-method: linear-gradient(0deg in oklch, rgba(27, 18, 69, 1) 0%, rgba(62, 17, 125, 1) 100%);
@@ -333,10 +343,10 @@ body {
       }
      }
 
-     .mouse {
+     /* .mouse {
       margin: -7em 0 0 0;
       z-index: 10;
-     }
+     } */
 
      .shadow {
       background-color: var(--neutral-1-d2);
@@ -377,6 +387,36 @@ body {
     }
   }
 } /* main endtag */
+
+
+/* MOUSE TAIL WIGGLE ANIMATION */
+
+#staart {
+  animation: tail-wiggle 3s infinite ease-in-out;
+  transform-origin: top right;
+}
+
+@keyframes tail-wiggle {
+  0%, 
+  100% { transform: skewY(0deg); }
+  50% {  transform: skewY(3deg); }
+}
+
+/* KOP WOBBLE ANIMATION */
+
+.kop {
+  animation: kop-wobble 3s infinite linear;
+  transform-origin: bottom center;
+}
+
+@keyframes kop-wobble {
+  0%, 
+  100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+
 
 @media (min-width:1005px) {
   .home{ 
