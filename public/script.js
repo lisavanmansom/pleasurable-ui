@@ -1,4 +1,6 @@
 // elements selecteren
+let image_preview = document.getElementById('file')
+let button_preview = document.querySelector('.file-input label')
 let hamburger = document.querySelector('.hamburger')
 let navMenu = document.querySelector('.desktop')
 let body = document.querySelector('body')
@@ -66,14 +68,67 @@ forms.forEach(function (form) {
   })
 })
 
-// Allstories carousel
+button_preview.classList.add("preview-enhanced");
 
-function showPreview(event){
-  if(event.target.files.length > 0) {
+// Allstories carousel
+image_preview.addEventListener('change', function(event) {
+  if (event.target.files.length > 0) {
     let src = URL.createObjectURL(event.target.files[0]);
     let preview = document.getElementById("image-preview");
     preview.src = src;
     preview.style.display = "block";
     preview.style.height = "130px";
+
+    startConfetti();
   }
+});
+
+
+function startConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const confettiCount = 150;
+  const confetti = [];
+
+  for (let i = 0; i < confettiCount; i++) {
+    confetti.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      r: Math.random() * 4 + 1,  // radius
+      d: Math.random() * confettiCount,  // density
+      color: `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.7)`,
+      tilt: Math.random() * 10 - 10,
+      tiltAngleIncremental: Math.random() * 0.07 + 0.05,
+      tiltAngle: 0
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    confetti.forEach((confetto, index) => {
+      confetto.tiltAngle += confetto.tiltAngleIncremental;
+      confetto.y += (Math.cos(confetto.d) + 3 + confetto.r / 2) / 2;
+      confetto.tilt = Math.sin(confetto.tiltAngle - index / 3) * 15;
+
+      if (confetto.y > canvas.height) {
+        confetto.x = Math.random() * canvas.width;
+        confetto.y = -20;
+      }
+
+      ctx.beginPath();
+      ctx.lineWidth = confetto.r;
+      ctx.strokeStyle = confetto.color;
+      ctx.moveTo(confetto.x + confetto.tilt + confetto.r, confetto.y);
+      ctx.lineTo(confetto.x + confetto.tilt, confetto.y + confetto.tilt + confetto.r);
+      ctx.stroke();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
 }
