@@ -55,13 +55,17 @@
 
      /* DAYTIME BACKGROUND HOMEPAGE */
      :root[data-theme='daytime'] {
-      --background-color: linear-gradient(22deg, rgba(131,197,190,1) 0%, rgba(0,109,119,1) 100%);
+      --background-image:
+      radial-gradient(at 84% 13%, rgb(159, 242, 247) 0px, transparent 50%),
+      radial-gradient(at 21% 74%, rgb(243, 187, 226) 0px, transparent 50%);    
     }
     
     /* NIGHTTIME BACKGROUND HOMEPAGE */
     :root[data-theme='nighttime'] {
-      --background-color: pink;
-    }
+
+      --background-image:
+      radial-gradient(at 84% 13%, rgb(124, 205, 216) 0px, transparent 50%),
+      radial-gradient(at 21% 74%, rgb(48, 116, 165) 0px, transparent 50%);        }
 
 @supports ( background: linear-gradient(in oklch, red 0 0) ) {
   :root {
@@ -257,9 +261,7 @@ body {
   animation: gradient 13s ease infinite;
   background-size: 200% 200%;
   background-color: hsla( 0, 0%, 0%,1);
-  background-image:
-    radial-gradient(at 84% 13%, rgb(124, 205, 216) 0px, transparent 50%),
-    radial-gradient(at 21% 74%, rgb(48, 116, 165) 0px, transparent 50%);
+  background-image: var(--background-image);
 
   align-items: center;
   display: flex;
