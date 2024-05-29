@@ -1,6 +1,8 @@
 // elements selecteren
 let hamburger = document.querySelector('.hamburger')
 let navMenu = document.querySelector('.desktop')
+let date = new Date()
+let hour = date.getHours()
 let body = document.querySelector('body')
 var likedCircle = document.querySelector('.liked-circle')
 var sugCircle = document.querySelector('.sug-circle')
@@ -21,6 +23,13 @@ hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('desktop')
   hamburger.classList.toggle('active-bar')
 })
+
+// Thema veranderen op basis van het tijdstip (lichte thema (daytime) tussen 6 en 18 uur)
+if (hour >= 6 && hour < 18) {
+    document.documentElement.dataset.theme = 'daytime';
+} else {
+    document.documentElement.dataset.theme = 'nighttime';
+}
 
 // PE suggested + liked playlist section
 // JS code added & removing styling without JS
