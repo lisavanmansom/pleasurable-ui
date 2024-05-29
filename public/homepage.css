@@ -1,0 +1,32 @@
+
+  /* BACKGROUND FOR THE HOMEPAGE */ 
+
+.homescreen {
+  background: linear-gradient(22deg, rgba(131,197,190,1) 0%, rgba(0,109,119,1) 100%);}
+
+/* MOUSE TAIL WIGGLE ANIMATION */
+
+#staart {
+  animation: tail-wiggle 3s infinite ease-in-out;
+  transform-origin: top right;
+}
+
+@keyframes tail-wiggle {
+  0%, 
+  100% { transform: skewY(0deg); }
+  50% {  transform: skewY(3deg); }
+}
+
+/* KOP WOBBLE ANIMATION */
+
+.kop {
+  animation: kop-wobble 3s infinite linear;
+  transform-origin: bottom center;
+}
+
+@keyframes kop-wobble {
+  0%, 
+  100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
