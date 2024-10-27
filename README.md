@@ -24,7 +24,7 @@ Voor deze opdracht heb ik een webstie voor Tumi Mundo gebouwd. Ik ben verder geg
 
 
 
-https://the-web-is-for-everyone-interactive-vqv1.onrender.com
+https://pleasurable-ui-1.onrender.com
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
