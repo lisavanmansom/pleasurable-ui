@@ -19,7 +19,9 @@
 
 Voor deze opdracht heb ik een webstie voor Tumi Mundo gebouwd. Ik ben verder gegaan met de eerste "lessons" pagina mobile first gebouwd met daarbij een werkend menu. Vanuit dit menu kan je op de verschillende pagina's komen van dit project. Op de "lessons" pagina staan playlist en verhalen die je vanuit deze pagina verder kan bekijken.
 
-<img width="350" alt="Scherm­afbeelding 2024-05-28 om 13 53 17" src="https://github.com/lisavanmansom/pleasurable-ui/assets/144007419/e64f7726-0dd2-4679-91ca-9f1523d52ce7">
+
+<img width="1000" alt="Scherm­afbeelding 2024-10-27 om 09 09 22" src="https://github.com/user-attachments/assets/c58d4668-1577-4226-a7f4-4a001cdba299">
+
 
 
 https://the-web-is-for-everyone-interactive-vqv1.onrender.com
